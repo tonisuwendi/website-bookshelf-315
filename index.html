@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/book.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <h1 class="app-name">BookshelfApp</h1>
+      <button class="add-new-book">Tambah Buku</button>
+    </header>
+    <main>
+      <section class="add-book-wrapper shadow">
+        <h3 class="title" id="titleAddNewBook">Tambah Buku Baru</h3>
+        <form id="inputBook" autocomplete="off">
+          <div class="form-group">
+            <label for="inputBookTitle">Judul</label>
+            <input type="text" id="inputBookTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="inputBookAuthor">Penulis</label>
+            <input type="text" id="inputBookAuthor" required />
+          </div>
+          <div class="form-group">
+            <label for="inputBookYear">Tahun</label>
+            <input type="text" id="inputBookYear" required />
+          </div>
+          <div class="form-group-inline">
+            <input id="inputBookIsComplete" type="checkbox" />
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+          </div>
+          <div class="form-button">
+            <input
+              type="submit"
+              id="buttonSubmitBook"
+              class="button button-primary"
+              value="Masukan Buku"
+            />
+            <input
+              type="button"
+              id="buttonCancelAddNewBook"
+              class="button button-danger"
+              value="Batal"
+            />
+          </div>
+        </form>
+      </section>
+      <section class="search-section shadow">
+        <form id="searchBox" class="search-box">
+          <input
+            type="text"
+            id="inputSearchBox"
+            autocomplete="off"
+            placeholder="Cari judul buku.."
+          />
+          <img src="img/search.svg" alt="search icon" />
+        </form>
+      </section>
+      <section class="list-book-wrapper">
+        <div class="list-book">
+          <h3 class="title">Belum selesai dibaca</h3>
+          <div id="unreadBook"></div>
+        </div>
+        <div class="list-book">
+          <h3 class="title">Selesai dibaca</h3>
+          <div id="readBook"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2021 Bookshelf. All Right Reserved.</p>
+    </footer>
+
+    <div class="alert-delete" id="alertDelete">
+      <div class="bg-overlay"></div>
+      <div class="box-alert">
+        <p id="contentAlertDelete"></p>
+        <div class="button-full form-button">
+          <button id="buttonCancelAlertDelete" class="button button-primary">
+            Batal
+          </button>
+          <button
+            id="buttonAgreeAlertDelete"
+            class="button button-outline-danger"
+          >
+            Ya, hapus
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/variable.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
